@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     'pageA': './src/pageA.js',
     'pageB': './src/pageB.js',
+    'vendor': ['lodash']
   },
 
   output: {
@@ -17,6 +18,11 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
       minChunks: 2,
+      chunks: ['pageA', 'pageB'],
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest'],
+      minChunks: Infinity,
     })
   ],
 };
