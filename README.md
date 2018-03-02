@@ -15,5 +15,6 @@
     + Set
     + ...
   + babel-plugin-transform-runtime: scope polyfill
++ 3-5: Load .ts
 
   
