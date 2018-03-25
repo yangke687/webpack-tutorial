@@ -8,13 +8,21 @@
 
 require.include('./moduleA')
 
-require.ensure(['./subPageA'], function(){
-  var subPageA = require('./subPageA')
-}, 'subPageA')
+// require.ensure(['./subPageA'], function(){
+//   var subPageA = require('./subPageA')
+// }, 'subPageA')
 
-require.ensure(['./subPageB'], function() {
-  var subPageB = require('./subPageB')
-}, 'subPageB')
+// require.ensure(['./subPageB'], function() {
+//   var subPageB = require('./subPageB')
+// }, 'subPageB')
+
+import(/* webpackChunkName: 'subPageA' */'./subPageA').then(function(subPageA){
+  console.log(subPageA)
+})
+
+import(/* webpackChunkName: 'subPageB' */'./subPageB').then(function(subPageB){
+  console.log(subPageB)
+})
 
 //import * as _ from 'lodash'
 require.ensure(['lodash'], function(require){
