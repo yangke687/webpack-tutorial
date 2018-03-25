@@ -4,8 +4,8 @@ var path = require('path')
 module.exports = {
   entry: {
     'pageA': './src/pageA.js',
-    //'pageB': './src/pageB.js',
-    //'vendor': ['lodash']
+    'pageB': './src/pageB.js',
+    'vendor': ['lodash']
   },
 
   output: {
@@ -15,15 +15,20 @@ module.exports = {
     publicPath: './dist/'
   },
 
-  // plugins: [
-  //   new webpack.optimize.CommonsChunkPlugin({
-  //     name: 'common',
-  //     minChunks: 2,
-  //     chunks: ['pageA', 'pageB'],
-  //   }),
-  //   new webpack.optimize.CommonsChunkPlugin({
-  //     names: ['vendor', 'manifest'],
-  //     minChunks: Infinity,
-  //   })
-  // ],
+  plugins: [
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'common',
+    //   minChunks: 2,
+    //   chunks: ['pageA', 'pageB'],
+    // }),
+    new webpack.optimize.CommonsChunkPlugin({
+      async: 'common-async',
+      children: true,
+      minChunks: 2,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest'],
+      minChunks: Infinity,
+    })
+  ],
 };
