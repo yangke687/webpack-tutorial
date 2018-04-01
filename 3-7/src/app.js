@@ -16,5 +16,3 @@ setInterval(function(){
   }
   flag = !flag
 }, 500)
-
-
