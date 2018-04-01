@@ -1,5 +1,5 @@
-import base from './css/base.css'
-import common from './css/common.css'
+import base from './css/base.less'
+import common from './css/common.less'
 
 // css modules
 let rootDom = document.getElementById('app')

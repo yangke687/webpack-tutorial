@@ -14,7 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.less$/,
         use: [
           {
             //loader: 'style-loader/url' // second
@@ -32,6 +32,9 @@ module.exports = {
               modules: true,
             }
             //loader: 'file-loader'
+          },
+          {
+            loader: 'less-loader',
           }
         ]
       }
