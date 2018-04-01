@@ -17,25 +17,21 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-<<<<<<< HEAD
             //loader: 'style-loader/url' // second
             loader: 'style-loader',
             options: {
-              insertInto: '#app',
+              //insertInto: '#app',
               singleton: true,
               transform: './css.transform.js', // css transformer
             }
           },
           {
-            loader: 'css-loader'  // first
+            loader: 'css-loader', // first
+            options: {
+              minimize: true,
+              modules: true,
+            }
             //loader: 'file-loader'
-=======
-            loader: 'style-loader/url' // second
-          },
-          {
-            //loader: 'css-loader'  // first
-            loader: 'file-loader'
->>>>>>> 5f52be3025d782d84231f255f0fc5a21525159e8
           }
         ]
       }

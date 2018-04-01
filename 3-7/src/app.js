@@ -1,5 +1,9 @@
-import './css/base.css'
-import './css/common.css'
+import base from './css/base.css'
+import common from './css/common.css'
+
+// css modules
+let rootDom = document.getElementById('app')
+rootDom.innerHTML = `<div class="${base.box}"></div>`
 
 // css-loader/usable example
 //base.use()

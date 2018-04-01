@@ -1,3 +1,8 @@
 body {
   font-size: 20px;
 }
+
+.centerBox {
+  text-align: cetner;
+  margin: 0 auto;
+}
