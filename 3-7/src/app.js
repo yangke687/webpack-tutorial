@@ -1,18 +1,18 @@
-import base from './css/base.css'
-import common from './css/common.css'
+import './css/base.css'
+import './css/common.css'
 
 // css-loader/usable example
 //base.use()
 //common.use()
 
-var flag = false
+// var flag = false
 
-setInterval(function(){
-  console.log('tick')
-  if(flag) {
-    base.unuse()
-  } else {
-    base.use()
-  }
-  flag = !flag
-}, 500)
+// setInterval(function(){
+//   console.log('tick')
+//   if(flag) {
+//     base.unuse()
+//   } else {
+//     base.use()
+//   }
+//   flag = !flag
+// }, 500)

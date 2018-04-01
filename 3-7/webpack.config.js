@@ -18,11 +18,16 @@ module.exports = {
         use: [
           {
             //loader: 'style-loader/url' // second
-            loader: 'style-loader/useable',
+            loader: 'style-loader',
+            options: {
+              insertInto: '#app',
+              singleton: true,
+              transform: './css.transform.js', // css transformer
+            }
           },
           {
-            //loader: 'css-loader'  // first
-            loader: 'file-loader'
+            loader: 'css-loader'  // first
+            //loader: 'file-loader'
           }
         ]
       }
