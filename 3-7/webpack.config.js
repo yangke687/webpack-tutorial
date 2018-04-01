@@ -1,4 +1,5 @@
 const path = require('path')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -15,9 +16,8 @@ module.exports = {
     rules: [
       {
         test: /\.less$/,
-        use: [
-          {
-            //loader: 'style-loader/url' // second
+        use: ExtractTextWebpackPlugin.extract({
+          fallback: {
             loader: 'style-loader',
             options: {
               //insertInto: '#app',
@@ -25,19 +25,27 @@ module.exports = {
               transform: './css.transform.js', // css transformer
             }
           },
-          {
-            loader: 'css-loader', // first
-            options: {
-              minimize: true,
-              modules: true,
+          use: [
+            {
+              loader: 'css-loader', // first
+              options: {
+                minimize: true,
+                modules: true,
+              }
+              //loader: 'file-loader'
+            },
+            {
+              loader: 'less-loader',
             }
-            //loader: 'file-loader'
-          },
-          {
-            loader: 'less-loader',
-          }
-        ]
+          ]
+        })
       }
     ]
-  }
+  },
+
+  plugins: [
+    new ExtractTextWebpackPlugin({
+      filename: '[name].min.css'
+    })
+  ]
 };
