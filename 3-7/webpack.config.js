@@ -35,6 +35,15 @@ module.exports = {
               //loader: 'file-loader'
             },
             {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: [
+                  require('autoprefixer')(),
+                ]
+              }
+            },
+            {
               loader: 'less-loader',
             }
           ]

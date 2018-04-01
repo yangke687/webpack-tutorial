@@ -8,7 +8,7 @@
     + env
     + babel-preset-react
     + babel-preset-stage 0 - 3
-  + babel-polyfill: global ployfill
+  + babel-polyfill: global polyfill
     + Promise
     + Generator
     + Map
@@ -17,5 +17,38 @@
   + babel-plugin-transform-runtime: scope polyfill
 + 3-5: Load .ts
 + 3-6: CommonsChunkPlugin
+  + async: true
++ 3-6-1: Webpack methods
+  + require.ensure
+  + require.include
+  + dynamic import
++ 3-7: CSS
+  + style-loader
+    + insertAt
+    + insertInto (DOM)
+    + singleton
+    + transform
+  + style-loader/url
+  + style-loader/useable
+  + css-loader
+    + alias
+    + importLoader
+    + Minimize: boolean
+    + modules
+      + :local
+      + :global
+      + :compose
+      + :compose ... from ...
+      + localIdentName: '[path][name]_[local]--[hash:base64:5]'
+    + extract-text-webpack-plugin
+      + filename: [name].min.css
+    + PostCSS in Webpack
+      + PostCss
+      + AutoPrefixer
+      + CSS-nano: minimize
+      + CSS-next
+
+
+
 
   
