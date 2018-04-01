@@ -17,6 +17,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
+<<<<<<< HEAD
             //loader: 'style-loader/url' // second
             loader: 'style-loader',
             options: {
@@ -28,6 +29,13 @@ module.exports = {
           {
             loader: 'css-loader'  // first
             //loader: 'file-loader'
+=======
+            loader: 'style-loader/url' // second
+          },
+          {
+            //loader: 'css-loader'  // first
+            loader: 'file-loader'
+>>>>>>> 5f52be3025d782d84231f255f0fc5a21525159e8
           }
         ]
       }
