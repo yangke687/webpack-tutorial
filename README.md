@@ -47,6 +47,10 @@
       + AutoPrefixer
       + CSS-nano: minimize
       + CSS-next
++ 3-8: Tree Shaking
+  + JS Tree Shaking
+    + uglifyjs-webpack-plugin
+  + CSS Tree Shaking
 
 
 
