@@ -93,5 +93,8 @@ module.exports = {
 
   plugins: [
     extractLess,
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+    })
   ]
 };
