@@ -4,5 +4,5 @@ console.log(c());
 
 var app = document.getElementById('app');
 var div = document.createElement('div');
-div.className="box";
+div.className="smallBox";
 app.appendChild(div);
