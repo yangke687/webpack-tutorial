@@ -47,11 +47,17 @@ module.exports = {
       {
         test: /\.(jpg|jpeg|png|gif)$/,
         use: [
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     publicPath: '../assets',
+          //     useRelativePath: true,
+          //   }
+          // }
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-              publicPath: '../assets',
-              useRelativePath: true,
+              limit: 1000,
             }
           }
         ]
