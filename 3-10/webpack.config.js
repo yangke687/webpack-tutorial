@@ -47,17 +47,25 @@ module.exports = {
       {
         test: /\.(jpg|jpeg|png|gif)$/,
         use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: '../assets',
+              useRelativePath: true,
+            }
+          },
           // {
-          //   loader: 'file-loader',
+          //   loader: 'url-loader',
           //   options: {
-          //     publicPath: '../assets',
-          //     useRelativePath: true,
+          //     limit: 1000,
           //   }
           // }
           {
-            loader: 'url-loader',
+            loader: 'img-loader',
             options: {
-              limit: 1000,
+              pngquant: {
+                quality: 80, /** 0 - 100 */
+              }
             }
           }
         ]
