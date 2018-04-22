@@ -56,6 +56,12 @@
         + paths: glob.sync([])
         + npm install glob-all --save-dev
       + purifycss-webpack
++ 3-10: Image File Handler
+  + file-loader (css image)
+  + url-loader (base64)
+  + img-loader (compress image)
+  + postcss-sprites
+
 
 
 
