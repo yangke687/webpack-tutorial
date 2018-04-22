@@ -51,6 +51,11 @@
   + JS Tree Shaking
     + uglifyjs-webpack-plugin
   + CSS Tree Shaking
+    + Purify CSS
+      + options: 
+        + paths: glob.sync([])
+        + npm install glob-all --save-dev
+      + purifycss-webpack
 
 
 
