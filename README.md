@@ -61,6 +61,10 @@
   + url-loader (base64)
   + img-loader (compress image)
   + postcss-sprites
++ 3-10: 3rd party JS library
+  + webpack.providePlugin
+  + imports-loader
+  + window
 
 
 
