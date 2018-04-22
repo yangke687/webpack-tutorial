@@ -91,6 +91,12 @@ module.exports = {
     ]
   },
 
+  resolve: {
+    alias: {
+      jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js'),
+    }
+  },
+
   plugins: [
     extractLess,
     new webpack.ProvidePlugin({
