@@ -17,6 +17,12 @@ module.exports = {
     filename: '[name].bundle.js',
   },
 
+  resolve: {
+    alias: {
+      jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js'),
+    }
+  },
+
   module: {
     rules: [
       {
@@ -87,20 +93,26 @@ module.exports = {
             }
           }
         ]
+      },
+      /** imports loader <=> webpack.providePlugin jquery */
+      {
+        test: path.resolve(__dirname, 'src/app.js'),
+        use: [
+          {
+            loader: 'imports-loader',
+            options: {
+              $: 'jquery',
+            }
+          }
+        ]
       }
     ]
   },
 
-  resolve: {
-    alias: {
-      jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js'),
-    }
-  },
-
   plugins: [
     extractLess,
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-    })
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    // })
   ]
 };
