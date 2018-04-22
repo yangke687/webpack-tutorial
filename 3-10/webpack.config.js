@@ -35,6 +35,9 @@ module.exports = {
                 ident: 'postcss',
                 plugins: [
                   require('autoprefixer')(),
+                  require('postcss-sprites')({
+                    spritePath: 'dist/assets'
+                  }),
                 ]
               }
             },
@@ -50,6 +53,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
+              name: '[name]-min.[ext]',
               publicPath: '../assets',
               useRelativePath: true,
             }
