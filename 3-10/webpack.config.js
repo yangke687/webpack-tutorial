@@ -73,6 +73,20 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(eot|woff2|woff|ttf|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name]-[hash:5].[ext]',
+              limit: 5000,
+              publicPath: '../assets/fonts',
+              useRelativePath: true,
+            }
+          }
+        ]
       }
     ]
   },
