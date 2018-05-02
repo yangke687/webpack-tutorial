@@ -115,6 +115,10 @@ module.exports = {
     new htmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html',
+      chunks: ['app'],
+      minify: {
+        collapseWhitespace: true,
+      }
     })
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
