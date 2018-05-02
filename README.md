@@ -65,6 +65,13 @@
   + webpack.providePlugin
   + imports-loader
   + window
++ 3-11: HtmlWebpackPlugin
+  + options
+    + template
+    + filename
+    + minify
+    + chunks
+    + inject
 
 
 
