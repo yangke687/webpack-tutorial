@@ -138,7 +138,7 @@ module.exports = {
   },
 
   devServer: {
-    inline: false, /* console log frame */
+    //inline: false, /* console log frame */
     historyApiFallback: true,
     port: 9001,
     proxy: {
@@ -153,7 +153,9 @@ module.exports = {
           //'Cookie': 'xxxxxxx',
         },
       }
-    }
+    },
+    hot: true,
+    hotOnly: true,
   },
 
   plugins: [
@@ -180,5 +182,9 @@ module.exports = {
     }),
 
     new cleanWebpackPlugin(['dist']),
+
+    new webpack.HotModuleReplacementPlugin(),
+
+    new webpack.NamedModulesPlugin(),
   ]
 };
