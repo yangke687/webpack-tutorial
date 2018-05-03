@@ -2,6 +2,7 @@ var webpack = require('webpack')
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var path = require('path')
 var htmlWebpackPlugin = require('html-webpack-plugin')
+var htmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
 
 var extractLess = new ExtractTextWebpackPlugin({
   filename: 'css/[name]-[hash:5].min.css'
@@ -26,6 +27,17 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env']
+            }
+          }
+        ]
+      },
       {
         test: /\.less$/,
         use: extractLess.extract({
@@ -129,7 +141,7 @@ module.exports = {
     new htmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html',
-      chunks: ['app'],
+      //chunks: ['app'],
       minify: {
         collapseWhitespace: true,
       }
@@ -137,5 +149,14 @@ module.exports = {
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
     // })
+
+    ,
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+    }),
+
+    new htmlInlineChunkPlugin({
+      inlineChunks: ['manifest'],
+    })
   ]
 };
