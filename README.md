@@ -72,6 +72,9 @@
     + minify
     + chunks
     + inject
+  + html-loader: webpack handle html image file
+    + options
+      + attrs: [img: src]
 
 
 
