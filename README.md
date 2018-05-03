@@ -79,6 +79,12 @@
   + inline-manifest-webpack-plugin
   + html-webpack-inline-chunk-plugin
 
++ 4-1: Dev Environment
+  + webpack watch mode
+    + webpack -watch
+    + webpack -w
+  + webpack-dev-server
+  + express + webpack-dev-middleware
 
 
 
