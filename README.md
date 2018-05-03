@@ -90,6 +90,15 @@
       + rewrite
       + proxy
       + module hot reloading
+        + 保持应用数据状态
+        + 节省调试时间
+        + 样式调试快
+        + use
+          + devServer.hot
+          + webpack.HotModuleReplacementPlugin
+          + module.hot
+          + module.hot.accept
+          + module.hot.decline
     + options: 
       + inline
       + contentBase
@@ -97,6 +106,14 @@
       + historyAPIFallback (server side rendering)
       + https
       + proxy
+        + http-proxy-middleware
+        + devServer.proxy
+        + options:
+          + target: remote address
+          + changeOrigin
+          + headers
+          + logLevel
+          + pathRewrite 
       + hot
       + openpage
       + lazy
