@@ -14,7 +14,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    //publicPath: 'dist/',
+    publicPath: '/',
     filename: '[name].bundle-[hash:5].js',
   },
 
@@ -57,20 +57,22 @@ module.exports = {
       {
         test: /\.(jpg|jpeg|png|gif)$/,
         use: [
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     name: '[name]-min.[ext]',
+          //     publicPath: '../assets',
+          //     useRelativePath: true,
+          //   }
+          // },
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               name: '[name]-min.[ext]',
-              publicPath: '../assets',
-              useRelativePath: true,
+              limit: 1,
+              outputPath: 'assets/',
             }
           },
-          // {
-          //   loader: 'url-loader',
-          //   options: {
-          //     limit: 1000,
-          //   }
-          // }
           {
             loader: 'img-loader',
             options: {
@@ -103,6 +105,18 @@ module.exports = {
             loader: 'imports-loader',
             options: {
               $: 'jquery',
+            }
+          }
+        ]
+      },
+      
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              attrs: ['img:src', 'img:data-src'], // default: 'img:src',
             }
           }
         ]
