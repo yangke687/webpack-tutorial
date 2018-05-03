@@ -142,10 +142,13 @@ module.exports = {
     historyApiFallback: true,
     port: 9001,
     proxy: {
-      '/api': {
+      '/': {
         target: 'https://m.weibo.cn',
         changeOrigin: true,
         logLevel: 'debug',
+        pathRewrite: {
+          '^/comments': '/api/comments'
+        }
       }
     }
   },
