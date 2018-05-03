@@ -84,6 +84,23 @@
     + webpack -watch
     + webpack -w
   + webpack-dev-server
+    + Features:
+      + live reloading
+      + https
+      + rewrite
+      + proxy
+      + module hot reloading
+    + options: 
+      + inline
+      + contentBase
+      + port
+      + historyAPIFallback (server side rendering)
+      + https
+      + proxy
+      + hot
+      + openpage
+      + lazy
+      + overlay
   + express + webpack-dev-middleware
 
 
