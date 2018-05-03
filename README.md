@@ -75,6 +75,9 @@
   + html-loader: webpack handle html image file
     + options
       + attrs: [img: src]
++ Optimize
+  + inline-manifest-webpack-plugin
+  + html-webpack-inline-chunk-plugin
 
 
 
