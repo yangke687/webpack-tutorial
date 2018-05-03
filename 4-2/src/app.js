@@ -11,3 +11,9 @@ $.get('/comments/show', {
 }, function(res){
   console.log('res:', res);
 });
+
+$.get('/msg/index', {
+  format: 'cards',
+}, function(res){
+  console.log('res 2:', res);
+});

@@ -148,7 +148,10 @@ module.exports = {
         logLevel: 'debug',
         pathRewrite: {
           '^/comments': '/api/comments'
-        }
+        },
+        headers: {
+          //'Cookie': 'xxxxxxx',
+        },
       }
     }
   },
