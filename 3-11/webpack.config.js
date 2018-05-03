@@ -14,7 +14,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    //publicPath: '/',
     filename: '[name].bundle-[hash:5].js',
   },
 
@@ -110,17 +110,17 @@ module.exports = {
         ]
       },
       
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: {
-              attrs: ['img:src', 'img:data-src'], // default: 'img:src',
-            }
-          }
-        ]
-      }
+      // {
+      //   test: /\.html$/,
+      //   use: [
+      //     {
+      //       loader: 'html-loader',
+      //       options: {
+      //         attrs: ['img:src', 'img:data-src'], // default: 'img:src',
+      //       }
+      //     }
+      //   ]
+      // }
     ]
   },
 
