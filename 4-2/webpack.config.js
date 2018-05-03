@@ -140,6 +140,14 @@ module.exports = {
   devServer: {
     inline: false, /* console log frame */
     historyApiFallback: true,
+    port: 9001,
+    proxy: {
+      '/api': {
+        target: 'https://m.weibo.cn',
+        changeOrigin: true,
+        logLevel: 'debug',
+      }
+    }
   },
 
   plugins: [
