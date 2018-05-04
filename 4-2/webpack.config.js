@@ -20,6 +20,8 @@ module.exports = {
     filename: 'js/[name].bundle-[hash:5].js', // put '.js' files into 'js' sub folder of dist directory
   },
 
+  devtool: 'cheap-eval-source-map',
+
   resolve: {
     alias: {
       jquery$: path.resolve(__dirname, 'src/libs/jquery.min.js'),
@@ -186,5 +188,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
 
     new webpack.NamedModulesPlugin(),
+
+    //new webpack.optimize.UglifyJsPlugin(), 'devtool: source-map'
   ]
 };
