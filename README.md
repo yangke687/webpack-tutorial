@@ -118,7 +118,25 @@
       + openpage
       + lazy
       + overlay
+    + Source Map Debugging
+      + Devtool
+        + Development Mode
+          + eval (compiling fast but includes 'webpack' code )
+          + eval-source-map
+          + cheap-eval-source-map (* suggest)
+          + cheap-module-eval-source-map (* suggest)
+        + Production Mode
+          + source-map (* suggest)
+          + hidden-source-map
+          + nosource-source-map
+      + css source map loaders
+        + css-loader.option.sourcemap
+        + less-loader.option.sourcemap
+        + sass-loader.option.sourcemap
+      + webpack.SourceMapDevToolPlugin
+      + webpack.EvalSourceMapDevToolPlugin
   + express + webpack-dev-middleware
+
 
 
 
