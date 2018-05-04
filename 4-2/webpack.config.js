@@ -43,18 +43,26 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: extractLess.extract({
-          fallback: {
+        use: [{
+        //use: extractLess.extract({ // stop using extractTextPlugin to lookup css source map
+          //fallback: {
             loader: 'style-loader',
+            options: {
+              sourceMap: true,
+            }
           },
-          use: [
+          //use: [
             {
               loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              }
             },
             {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
+                sourceMap: true,
                 plugins: [
                   require('autoprefixer')(),
                   require('postcss-sprites')({
@@ -65,9 +73,12 @@ module.exports = {
             },
             {
               loader: 'less-loader',
+              options: {
+                sourceMap: true,
+              }
             }
           ]
-        })
+        //})
       },
       {
         test: /\.(jpg|jpeg|png|gif)$/,
