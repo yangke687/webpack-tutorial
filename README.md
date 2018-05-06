@@ -157,7 +157,7 @@
         + eslint-config-xxx (airbnb)
   + express + webpack-dev-middleware
 
-+ 4-3 生产环境与开发环境
++ 4-3: 生产环境与开发环境
   + 开发环境
     + 模块热更新
     + sourceMap
@@ -175,7 +175,13 @@
   + webpack-merge
     + webpack.dev.conf.js
     + webpack.prod.conf.js
-    + webpack.common.conf.js
++ 4-4: webpack.common.conf.js
+  + express or Kao
+  + webpack-dev-middleware
+  + webpack-hot-middleware
+  + http-proxy-middleware
+  + connect-history-api-proxy
+  + opn: open browser
 
 
 
