@@ -135,6 +135,25 @@
         + sass-loader.option.sourcemap
       + webpack.SourceMapDevToolPlugin
       + webpack.EvalSourceMapDevToolPlugin
+    + ESlint
+      + eslint
+      + eslint-loader
+        + options.failOnWarning: boolean
+        + options.failOnError: boolean
+        + options.formatter
+      + eslint-plugin-html: html <script> tag
+      + eslint-friendly-formatter: error / warning output format
+      + usage:
+        + webpack config
+        + .eslintrc.*
+        + package.json => eslintConfig
+      + standard: https://standardjs.com
+        + eslint-config-standard
+        + eslint-plugin-promise
+        + eslint-plugin-standard
+        + eslint-plugin-import
+        + eslint-plugin-node
+        + eslint-config-xxx (airbnb)
   + express + webpack-dev-middleware
 
 
