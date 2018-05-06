@@ -32,12 +32,19 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        exclude: [ path.resolve(__dirname, 'src/libs') ],
         use: [
           {
             loader: 'babel-loader',
             options: {
               presets: ['env']
             }
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              formatter: require('eslint-friendly-formatter'),
+            },
           }
         ]
       },
@@ -124,17 +131,17 @@ module.exports = {
         ]
       },
       /** imports loader <=> webpack.providePlugin jquery */
-      {
-        test: path.resolve(__dirname, 'src/app.js'),
-        use: [
-          {
-            loader: 'imports-loader',
-            options: {
-              $: 'jquery',
-            }
-          }
-        ]
-      },
+      // {
+      //   test: path.resolve(__dirname, 'src/app.js'),
+      //   use: [
+      //     {
+      //       loader: 'imports-loader',
+      //       options: {
+      //         $: 'jquery',
+      //       }
+      //     }
+      //   ]
+      // },
       
       // {
       //   test: /\.html$/,
@@ -154,6 +161,7 @@ module.exports = {
     //inline: false, /* console log frame */
     historyApiFallback: true,
     port: 9001,
+    overlay: true, /** show eslint warnings */
     proxy: {
       '/': {
         target: 'https://m.weibo.cn',

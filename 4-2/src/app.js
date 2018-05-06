@@ -1,5 +1,6 @@
 import './css/base.less';
 import { renderA, componentA } from './components/a';
+import $ from 'jquery';
 
 var app = document.getElementById('app');
 
