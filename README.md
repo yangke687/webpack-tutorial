@@ -182,6 +182,16 @@
   + http-proxy-middleware
   + connect-history-api-proxy
   + opn: open browser
++ 5-1: Analyse
+  + Official Analyse Tool
+    + webpack --profile --json > stats.json
+    + webpack --profile --json | Out-file 'stats.json' -Encoding OEM
+    + http://webpack.github.com/analyse
+  + webpack-bundle-analyzer
+    + Usage
+      + BundleAnalyzerPlugin
+      + webpack-bundle-analyzer stats.json
+
 
 
 
