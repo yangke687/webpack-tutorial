@@ -191,6 +191,25 @@
     + Usage
       + BundleAnalyzerPlugin
       + webpack-bundle-analyzer stats.json
++ 5-2: 优化打包速度
+  + 1.1: 分开 vendor 和 app
+  + 1.2: DllPlugin
+  + 1.3: DllReferencePlugin
+  + 2: uglifyJsPlugin
+    + 'parallel' options
+  + 3.1: HappyPack (apply to loaders, serial => parallel)
+  + 3.2: HappyPack.ThreadPool
+  + 4: babel-loader
+   + options.cacheDirectory
+   + include
+   + exclude
+  + 5: 其他
+    + 减少resolve
+    + Devtool: 去除sourceMap
+    + cache-loader
+    + Upgrade node
+    + Upgrade webpack
+  
 
 
 
