@@ -209,6 +209,12 @@
     + cache-loader
     + Upgrade node
     + Upgrade webpack
+  + 5-3: 长缓存优化 ( long time caching )
+    + split 'vendor'
+    + extract manifest (webpack runtime)
+    + NamedChunksPlugin
+    + NamedModulesPlugin
+    + Dynamic module name
   
 
 
