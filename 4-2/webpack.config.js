@@ -3,7 +3,8 @@ var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 var path = require('path')
 var htmlWebpackPlugin = require('html-webpack-plugin')
 var htmlInlineChunkPlugin = require('html-webpack-inline-chunk-plugin')
-var cleanWebpackPlugin = require('clean-webpack-plugin');
+var cleanWebpackPlugin = require('clean-webpack-plugin')
+const HappyPack = require('happypack')
 
 var extractLess = new ExtractTextWebpackPlugin({
   filename: 'css/[name]-[hash:5].min.css'
@@ -35,10 +36,10 @@ module.exports = {
         exclude: [ path.resolve(__dirname, 'src/libs') ],
         use: [
           {
-            loader: 'babel-loader',
-            options: {
-              presets: ['env']
-            }
+            loader: 'happypack/loader',
+            // options: {
+            //   presets: ['env']
+            // }
           },
           {
             loader: 'eslint-loader',
@@ -209,5 +210,9 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
 
     //new webpack.optimize.UglifyJsPlugin(), 'devtool: source-map'
+
+    new HappyPack({
+      loaders: ['babel-loader?presets[]=env']
+    })
   ]
 };

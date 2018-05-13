@@ -12,8 +12,8 @@ const generateConfig = env => {
 
   const scriptLoaders = [
     {
-      loader: 'babel-loader',
-    },
+      loader: 'babel-loader'
+    }
   ].concat(
     env === 'production' ? [] : [{
       loader: 'eslint-loader',
