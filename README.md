@@ -215,6 +215,28 @@
     + NamedChunksPlugin
     + NamedModulesPlugin
     + Dynamic module name
+  + 5-4: 多页面
+    + 多入口 Entry
+    + 多页面 Html
+    + 每个页面有不同的 Chunk
+    + 每个页面不同的参数
+    + 多配置
+      + 多页面对应多个webpack.config.js)
+      + 同样也可以多页面共享单份配置文件
+      + webpack 3.1.0
+      + parallel-webpack 并行打包提高速度
+      + 缺点: 多页面多配置不能提取和共享公用代码
+    + 单配置
+      + 共享各Entry之间的公用代码
+      + 缺点: 
+        + 打包速度慢
+        + 输入内容复杂
+      
+
+    
+
+
+
   
 
 
