@@ -3,10 +3,23 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 const baseConfig = {
   entry: {
     react: 'react',
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextWebpackPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        })
+      }
+    ]
   },
 
   output: {
@@ -15,6 +28,9 @@ const baseConfig = {
   },
 
   plugins: [
+    new ExtractTextWebpackPlugin({
+      filename: 'css/[name].[hash].css',
+    }),
     new CleanWebpackPlugin(path.resolve(__dirname, 'dist')),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'react',
