@@ -231,6 +231,26 @@
       + 缺点: 
         + 打包速度慢
         + 输入内容复杂
++ 6: Vue and Webpack
+  + vue-cli
+    + npm install vue-cli -g
+    + vue --help
+    + vue list
+      + vue templates
+        + simple
+        + webpack
+        + webpack-simple
+        + browserify
+        + browserify-simple
+    + vue init <template name> <project name>
+    + vue init <git repo> <project name>
+  + 6-1: vue webpack
+    + 项目结构
+    + 基本命令
+    + 开发配置
+    + 工具配置 (babel, eslint...)
+    + 其他
+
       
 
     
