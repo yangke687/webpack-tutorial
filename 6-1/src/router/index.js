@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
@@ -9,7 +8,12 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: () => import(/* webpackChunkName: 'home' */'@/pages/Home')
+    },
+    {
+      path: '/todos',
+      name: 'Todos',
+      component: () => import(/* webpackChunkName: 'todo' */'@/pages/Todos')
     }
   ]
 })
