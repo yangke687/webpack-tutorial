@@ -250,19 +250,27 @@
     + 开发配置
     + 工具配置 (babel, eslint...)
     + 其他
-
-      
-
-    
-
-
-
-  
-
-
-
-
-
-
-
-  
++ 7: React and Webpack
+  + 官方脚手架: 
+    + create-react-app
+    + react-scripts
+      + npm install create-react-app -g
+      + npx create-react-app my-project (npm 5.2+)
+      + create-react-app my-project (npm 5.2-)
+  + 官房脚本
+    + npm start
+    + npm test
+    + npm run build
+    + npm run eject
+  + 官方提供
+    + 支持 es6, jsx
+    + 支持 动态import
+    + 支持 fetch (polyfill)
+    + 支持 proxy
+    + 支持 postcss
+    + 支持 eslint
+    + 支持 unit test
+    + 不支持 React hot-reloading * 需要额外配置
+    + 不支持 CSS 预处理 (less or sass)
+  + 自定义配置
+  + 项目结构
