@@ -273,4 +273,7 @@
       + 不支持 React hot-reloading * 需要额外配置
       + 不支持 CSS 预处理 (less or sass)
     + 自定义配置
+      + proxy
+      + Less
+      + Hot reloading
     + 项目结构
