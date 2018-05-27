@@ -277,3 +277,33 @@
       + Less
       + Hot reloading
     + 项目结构
+  + 6-3: Angular and Webpack
+   + Angular-cli
+    + Angular最佳实践代码
+    + 所有项目依赖
+    + Typescript和测试
+    + Usage:
+      + npm install -g @angular/cli (to use 'ng' command)
+      + ng help
+      + ng new project-name
+      + ng new project-name --style=less --source-dir=src
+      + ng set defaults.styleExt less
+      + ng g/generate
+      + ng serve (Webpack Dev Server)
+        + Compile Less/Scss
+        + Compile Typescripts
+        + bundle css/js
+        + hot reloading
+        + code splitting
+        + proxy
+          + proxy.conf.json
+          + ng serve --proxy-config proxy.conf.json
+      + ng build
+      + ng test
+      + ng e2e
+      + ng lint
+      + ng eject
+    + 安装第三方依赖
+      npm install lodash --save
+      npm install @type/lodash --save-dev
+
