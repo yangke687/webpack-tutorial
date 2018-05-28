@@ -304,6 +304,31 @@
       + ng lint
       + ng eject
     + 安装第三方依赖
-      npm install lodash --save
-      npm install @type/lodash --save-dev
-
+      + npm install lodash --save
+      + npm install @type/lodash --save-dev
++ Webpack 面试
+  + Webpack 与 Grunt 和 Gulp 有什么不同?
+    + Webpack 是一个模块打包工具，可以递归的打包项目中的所有模块，最终生成几个打包后的文件。
+      它和其他工具最大的不同是在于它支持code-splitting,模块化(AMD, ESM, CommonJS)和全局分析。
+  + 什么是bundle, 什么是chunk, 什么是module ?
+    + bundle 是由 webpack 打包出来的文件, chunk是指 webpack 在进行模块的依赖分析的时侯, 代码
+      分割出来的代码块。module 是开发过程中用到的单个模块。
+  + 什么是Loading? 什么是Plugin?
+    + Loaders 用来告诉 Webpack 如何转化处理某一类文件, 并且引入到打包生成的文件中。
+      Plugin 用来自定义 webpack 打包过程的方式. 一个插件是含有 apply 方法的一个对象, 通过这个方法可以参与到
+      整个 webpack 打包的生命周期中也就是 webpack 打包的各个流程中。
+  + 如何自动生成 webpack 配置?
+    + webpack-cli / vue-cli / etc... 各种脚手架工具
+  + webpack-dev-server 与 Nginx 有什么区别?
+    + webpack-dev-server 使用内存来存储 webpack 开发环境下的打包文件, 并且可以使用模块热更新, 相比传统的 http
+      服务器软件, 对开发的支持更加简单高效。
+  + 什么是模块热更新?
+    + 模块热更新是 webpack 的一个功能。可以使代码修改后,浏览器不用刷新就可以看到效果, 可以理解为更高级版的浏览器刷新。
+      利用 WebSocket 实现
+  + 什么是长缓存? Webpack 中如何实现长缓存优化?
+    + 浏览器在用户访问页面的时侯，为了加快加载速度，会对用户静态访问的资源进行缓存，但是每次代码升级或是更新，都需要浏览器
+      去重新下载。最简单的方式就是引入新的文件名称。在 webpack 中可以在 output 给输出的文件指定 chunkhash , 并且分离
+      经常更新的代码和一般不会变化的框架代码。通过 NamedModulesPlugin 和 HashedModulesPlugin 插件使再次打包的文件名 Hash 不变。
+  + 什么是 Tree-shaking? CSS 可以 Tree-Shaking 么?
+    + Tree-Shaking 是指在打包过程中去除那些引入了，但是并没有被真正用到的那些死代码。在 webpack 中 Tree-shaking 是通过
+      uglifyJsPlugin 来 Tree-shaking JS。 CSS Three-shaking 需要使用 Purify-CSS。
